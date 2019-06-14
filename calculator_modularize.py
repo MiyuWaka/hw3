@@ -81,18 +81,18 @@ def brackets(tokens):
       closeindex = index
       break
     index += 1
-  print(openindex)
-  print(closeindex)
+  #print(openindex)
+  #print(closeindex)
   tokens = MultiplicationAndDivision(tokens,openindex+1,closeindex)
   answer = evaluate(tokens,openindex+1,closeindex+1) 
   #print(answer)
   tokens[openindex] = {'type': 'NUMBER', 'number': answer}
-  print(len(tokens))
-  print(tokens)
+  #print(len(tokens))
+  #print(tokens)
   for i in range(closeindex+2,len(tokens)):
     tokens[i-(closeindex-openindex+1)] = tokens[i]
   del tokens[len(tokens)-(closeindex-openindex+1):len(tokens)]
-  print(tokens)
+  #print(tokens)
   return tokens
 
 
